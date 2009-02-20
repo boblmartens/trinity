@@ -1,0 +1,13 @@
+# do not include any log files
+*.log
+log/*
+ 
+# nothing in the tmp folder
+tmp/**/*
+  
+# do not include the production or the test database
+db/production.sqlite3
+db/test.sqlite3
+	 
+# any swap files from vim
+*.swp
