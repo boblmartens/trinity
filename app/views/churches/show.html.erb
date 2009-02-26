@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%=h @church.name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%=h @church.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @church.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @church.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @church.zip %>
+</p>
+
+
+<%= link_to 'Edit', edit_church_path(@church) %> |
+<%= link_to 'Back', churches_path %>

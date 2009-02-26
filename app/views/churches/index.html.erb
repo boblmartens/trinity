@@ -1,0 +1,28 @@
+<h1>Listing churches</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr>
+
+<% for church in @churches %>
+  <tr>
+    <td><%=h church.name %></td>
+    <td><%=h church.street %></td>
+    <td><%=h church.city %></td>
+    <td><%=h church.state %></td>
+    <td><%=h church.zip %></td>
+    <td><%= link_to 'Show', church %></td>
+    <td><%= link_to 'Edit', edit_church_path(church) %></td>
+    <td><%= link_to 'Destroy', church, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New church', new_church_path %>

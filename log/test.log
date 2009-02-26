@@ -1,0 +1,61 @@
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "churches" [0m
+
+
+Processing ChurchesController#create (for 0.0.0.0 at 2009-02-26 00:13:45) [POST]
+  Parameters: {"church"=>{}}
+  [4;35;1mChurch Create (0.5ms)[0m   [0mINSERT INTO "churches" ("name", "city", "zip", "updated_at", "street", "state", "created_at") VALUES(NULL, NULL, NULL, '2009-02-26 06:13:45', NULL, NULL, '2009-02-26 06:13:45')[0m
+Redirected to #<Church:0xb78c974c>
+Completed in 10ms (DB: 3) | 302 Found [http://test.host/churches?]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "churches" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "churches" [0m
+  [4;36;1mChurch Load (0.5ms)[0m   [0;1mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+
+
+Processing ChurchesController#destroy (for 0.0.0.0 at 2009-02-26 00:13:45) [DELETE]
+  Parameters: {"id"=>"953125641"}
+  [4;35;1mChurch Load (0.5ms)[0m   [0mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+  [4;36;1mChurch Destroy (0.2ms)[0m   [0;1mDELETE FROM "churches" WHERE "id" = 953125641[0m
+Redirected to http://test.host/churches
+Completed in 3ms (DB: 2) | 302 Found [http://test.host/churches/953125641]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "churches" [0m
+  [4;36;1mChurch Load (0.5ms)[0m   [0;1mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+
+
+Processing ChurchesController#edit (for 0.0.0.0 at 2009-02-26 00:13:45) [GET]
+  Parameters: {"id"=>"953125641"}
+  [4;35;1mChurch Load (0.6ms)[0m   [0mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+Rendering template within layouts/churches
+Rendering churches/edit
+Completed in 30ms (View: 29, DB: 1) | 200 OK [http://test.host/churches/953125641/edit]
+
+
+Processing ChurchesController#index (for 0.0.0.0 at 2009-02-26 00:13:45) [GET]
+  [4;36;1mChurch Load (1.0ms)[0m   [0;1mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/churches]
+
+
+Processing ChurchesController#new (for 0.0.0.0 at 2009-02-26 00:13:45) [GET]
+Rendering template within layouts/churches
+Rendering churches/new
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://test.host/churches/new]
+  [4;35;1mChurch Load (0.8ms)[0m   [0mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+
+
+Processing ChurchesController#show (for 0.0.0.0 at 2009-02-26 00:13:45) [GET]
+  Parameters: {"id"=>"953125641"}
+  [4;36;1mChurch Load (2.3ms)[0m   [0;1mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+Rendering template within layouts/churches
+Rendering churches/show
+Completed in 6ms (View: 2, DB: 3) | 200 OK [http://test.host/churches/953125641]
+  [4;35;1mChurch Load (0.8ms)[0m   [0mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+
+
+Processing ChurchesController#update (for 0.0.0.0 at 2009-02-26 00:13:45) [PUT]
+  Parameters: {"church"=>{}, "id"=>"953125641"}
+  [4;36;1mChurch Load (0.7ms)[0m   [0;1mSELECT * FROM "churches" WHERE ("churches"."id" = 953125641) [0m
+Redirected to #<Church:0xb61967f0>
+Completed in 11ms (DB: 1) | 302 Found [http://test.host/churches/953125641?]

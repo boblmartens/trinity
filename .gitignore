@@ -1,6 +1,7 @@
 # do not include any log files
 *.log
 log/*
+log/*.log
  
 # nothing in the tmp folder
 tmp/**/*
