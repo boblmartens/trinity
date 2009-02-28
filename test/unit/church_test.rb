@@ -1,8 +1,7 @@
 require 'test_helper'
 
 class ChurchTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should_have_many :services
+
+  should_require_attributes :name, :street, :city, :state, :zip
 end
