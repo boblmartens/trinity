@@ -379,3 +379,76 @@ Migrating to CreateServices (20090228074926)
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (4.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228074926')[0m
   [4;35;1mSQL (4.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090226061145')[0m
+** acts_as_taggable_on: initialized properly.
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-03-03 17:12:49) [GET]
+  [4;36;1mSQL (3.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 166ms (View: 36, DB: 4) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing ChurchesController#index (for 127.0.0.1 at 2009-03-03 17:13:05) [GET]
+  [4;36;1mChurch Load (1.3ms)[0m   [0;1mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+Completed in 383ms (View: 313, DB: 1) | 200 OK [http://localhost/churches]
+
+
+Processing ChurchesController#index (for 127.0.0.1 at 2009-03-03 17:14:00) [GET]
+  [4;35;1mChurch Load (1.7ms)[0m   [0mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+Completed in 143ms (View: 101, DB: 2) | 200 OK [http://localhost/churches]
+
+
+Processing ChurchesController#new (for 127.0.0.1 at 2009-03-03 17:14:03) [GET]
+Rendering template within layouts/churches
+Rendering churches/new
+Completed in 100ms (View: 67, DB: 0) | 200 OK [http://localhost/churches/new]
+
+
+Processing ChurchesController#create (for 127.0.0.1 at 2009-03-03 17:14:21) [POST]
+  Parameters: {"church"=>{"city"=>"New Ulm", "name"=>"St. Paul's", "zip"=>"56073", "street"=>"1995 Luther Court", "state"=>"MN"}, "commit"=>"Create", "authenticity_token"=>"U2RW/Oq9Wvl4AeZ7Z6563TqM+HR5rrg8skdsEnxVXpE="}
+  [4;36;1mChurch Create (1.5ms)[0m   [0;1mINSERT INTO "churches" ("name", "city", "zip", "updated_at", "street", "state", "created_at") VALUES('St. Paul''s', 'New Ulm', '56073', '2009-03-03 23:14:21', '1995 Luther Court', 'MN', '2009-03-03 23:14:21')[0m
+Redirected to #<Church:0xb6fea248>
+Completed in 105ms (DB: 2) | 302 Found [http://localhost/churches]
+
+
+Processing ChurchesController#show (for 127.0.0.1 at 2009-03-03 17:14:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mChurch Load (1.5ms)[0m   [0mSELECT * FROM "churches" WHERE ("churches"."id" = 2) [0m
+Rendering template within layouts/churches
+Rendering churches/show
+Completed in 87ms (View: 50, DB: 2) | 200 OK [http://localhost/churches/2]
+
+
+Processing ChurchesController#index (for 127.0.0.1 at 2009-03-03 17:14:24) [GET]
+  [4;36;1mChurch Load (1.9ms)[0m   [0;1mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "services" WHERE ("services".church_id = 2) [0m
+Completed in 119ms (View: 90, DB: 3) | 200 OK [http://localhost/churches]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mChurch Load (2.7ms)[0m   [0;1mSELECT * FROM "churches" LIMIT 1[0m
+  [4;35;1mChurch Load (1.3ms)[0m   [0mSELECT * FROM "churches" LIMIT 1[0m
+  [4;36;1mService Create (1.6ms)[0m   [0;1mINSERT INTO "services" ("name", "church_id", "updated_at", "created_at") VALUES('First Sunday in Lent', 2, '2009-03-03 23:16:26', '2009-03-03 23:16:26')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "services" WHERE ("services".church_id = 2) [0m
+
+
+Processing ChurchesController#index (for 127.0.0.1 at 2009-03-03 17:16:35) [GET]
+  [4;36;1mChurch Load (2.1ms)[0m   [0;1mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "services" WHERE ("services".church_id = 2) [0m
+Completed in 352ms (View: 322, DB: 3) | 200 OK [http://localhost/churches]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-03-03 17:17:22) [GET]
+  [4;36;1mService Load (7.3ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/services
+Rendering services/index
+Completed in 173ms (View: 127, DB: 7) | 200 OK [http://localhost/services]

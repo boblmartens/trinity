@@ -7,6 +7,7 @@
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
+    <th>Services</th>
   </tr>
 
 <% for church in @churches %>
@@ -16,6 +17,7 @@
     <td><%=h church.city %></td>
     <td><%=h church.state %></td>
     <td><%=h church.zip %></td>
+    <td><%=h church.services.size %></td>
     <td><%= link_to 'Show', church %></td>
     <td><%= link_to 'Edit', edit_church_path(church) %></td>
     <td><%= link_to 'Destroy', church, :confirm => 'Are you sure?', :method => :delete %></td>

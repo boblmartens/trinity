@@ -429,3 +429,4 @@ Completed in 24ms (View: 8, DB: 3) | 200 OK [http://test.host/churches?]
   [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "churches" [0m
 ** acts_as_taggable_on: initialized properly.
 ** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
