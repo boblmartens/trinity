@@ -452,3 +452,222 @@ Processing ServicesController#index (for 127.0.0.1 at 2009-03-03 17:17:22) [GET]
 Rendering template within layouts/services
 Rendering services/index
 Completed in 173ms (View: 127, DB: 7) | 200 OK [http://localhost/services]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-17 00:35:04) [GET]
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 331ms (View: 4, DB: 2) | 200 OK [http://localhost/rails/info/properties]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-17 00:38:43) [GET]
+  [4;36;1mService Load (1.3ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/services
+Rendering services/index
+Completed in 253ms (View: 217, DB: 1) | 200 OK [http://localhost/services]
+
+
+Processing ServicesController#show (for 127.0.0.1 at 2009-04-17 00:38:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mService Load (0.7ms)[0m   [0mSELECT * FROM "services" WHERE ("services"."id" = 1) [0m
+Rendering template within layouts/services
+Rendering services/show
+Completed in 148ms (View: 126, DB: 1) | 200 OK [http://localhost/services/1]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-20 20:02:17) [GET]
+  [4;36;1mSQL (2.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 174ms (View: 24, DB: 3) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-20 20:02:35) [GET]
+
+ActionController::RoutingError (No route matches "/church" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ChurchesController#index (for 127.0.0.1 at 2009-04-20 20:02:38) [GET]
+  [4;36;1mChurch Load (19.6ms)[0m   [0;1mSELECT * FROM "churches" [0m
+Rendering template within layouts/churches
+Rendering churches/index
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "services" WHERE ("services".church_id = 2) [0m
+Completed in 226ms (View: 188, DB: 20) | 200 OK [http://localhost/churches]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-20 20:02:42) [GET]
+  [4;36;1mService Load (0.9ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/services
+Rendering services/index
+Completed in 90ms (View: 68, DB: 1) | 200 OK [http://localhost/services]
+
+
+Processing ServicesController#show (for 127.0.0.1 at 2009-04-20 20:02:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mService Load (0.5ms)[0m   [0mSELECT * FROM "services" WHERE ("services"."id" = 1) [0m
+Rendering template within layouts/services
+Rendering services/show
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/services/1]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: no such table: service: ALTER TABLE "service" ADD "description" text[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "services" ADD "description" text[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "services" ADD "season" text[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "services" ADD "other" text[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090421013704')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("churches")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("services")[0m
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-20 20:49:10) [GET]
+  [4;36;1mService Load (1.0ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/services
+Rendering services/index
+Completed in 26ms (View: 11, DB: 1) | 200 OK [http://localhost/services]
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("churches")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("services")[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCREATE TABLE "churches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mCREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "church_id" integer, "created_at" datetime, "updated_at" datetime, "description" text, "season" text, "other" text) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (10.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090421013704')[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090228074926')[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090226061145')[0m
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+Migrating to CreateServiceTimes (20090421031301)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "service_times" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_date" date, "service_time" time, "service_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090421031301')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("churches")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("service_times")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("services")[0m
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (103.3ms)[0m   [0;1mCREATE TABLE "churches" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "service_times" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "service_date" date, "service_time" time, "service_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCREATE TABLE "services" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "church_id" integer, "created_at" datetime, "updated_at" datetime, "description" text, "season" text, "other" text) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (5.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090421031301')[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090421013704')[0m
+  [4;36;1mSQL (11.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090228074926')[0m
+  [4;35;1mSQL (25.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090226061145')[0m
