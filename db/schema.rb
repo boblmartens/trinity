@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090421031301) do
+ActiveRecord::Schema.define(:version => 20090422031855) do
+
+  create_table "attached_files", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "service_id"
+  end
 
   create_table "churches", :force => true do |t|
     t.string   "name"
