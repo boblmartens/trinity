@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090423013832) do
+ActiveRecord::Schema.define(:version => 20090424020342) do
 
   create_table "attached_files", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20090423013832) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "service_id"
+    t.string   "attached_file_name"
+    t.string   "attached_content_type"
+    t.integer  "attached_file_size"
+    t.datetime "attached_updated_at"
   end
 
   create_table "churches", :force => true do |t|
@@ -40,6 +44,13 @@ ActiveRecord::Schema.define(:version => 20090423013832) do
     t.datetime "updated_at"
   end
 
+  create_table "seasons", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "service_times", :force => true do |t|
     t.date     "service_date"
     t.time     "service_time"
@@ -56,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20090423013832) do
     t.text     "description"
     t.text     "season"
     t.text     "other"
+    t.integer  "season_id"
   end
 
 end
