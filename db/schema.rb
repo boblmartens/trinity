@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090424020342) do
+ActiveRecord::Schema.define(:version => 20090429021954) do
 
   create_table "attached_files", :force => true do |t|
     t.string   "name"
@@ -68,6 +68,20 @@ ActiveRecord::Schema.define(:version => 20090424020342) do
     t.text     "season"
     t.text     "other"
     t.integer  "season_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "login_count"
+    t.integer  "failed_login_count"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

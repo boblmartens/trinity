@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  email: MyString
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  login_count: MyString
+  failed_login_count: 1
+  current_login_ip: MyString
+  last_login_ip: MyString
+  name: MyString
+
+two:
+  email: MyString
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  login_count: MyString
+  failed_login_count: 1
+  current_login_ip: MyString
+  last_login_ip: MyString
+  name: MyString
