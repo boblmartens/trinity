@@ -1633,3 +1633,494 @@ Migrating to CreateUsers (20090429021954)
   [4;35;1mSQL (11.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090226061145')[0m
   [4;36;1mSQL (3.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090422024757')[0m
   [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090424020342')[0m
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-04-28 21:42:30) [GET]
+
+NameError (uninitialized constant UserSessionController):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (63.7ms)
+Rendered rescues/_request_and_response (41.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-04-28 21:48:29) [GET]
+
+NameError (uninitialized constant UserSessionController):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (69.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-04-28 21:48:30) [GET]
+
+NameError (uninitialized constant UserSessionController):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (332.5ms)
+Rendered rescues/_request_and_response (12.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 21:58:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #7 of app/views/user_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <%= f.label :login %><br />
+7:   <%= f.text_field :login %><br />
+8:   <br />
+9:   <%= f.label :password %><br />
+10:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:7
+    app/views/user_sessions/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (102.1ms)
+Rendered rescues/_request_and_response (9.3ms)
+Rendering rescues/layout (internal_server_error)
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:06:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #7 of app/views/user_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <%= f.label :login %><br />
+7:   <%= f.text_field :login %><br />
+8:   <br />
+9:   <%= f.label :password %><br />
+10:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:7
+    app/views/user_sessions/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (101.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:06:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #7 of app/views/user_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <%= f.label :login %><br />
+7:   <%= f.text_field :login %><br />
+8:   <br />
+9:   <%= f.label :password %><br />
+10:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:7
+    app/views/user_sessions/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (107.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-04-28 22:07:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, show, and update):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:07:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #7 of app/views/user_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <%= f.label :login %><br />
+7:   <%= f.text_field :login %><br />
+8:   <br />
+9:   <%= f.label :password %><br />
+10:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:7
+    app/views/user_sessions/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (313.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:07:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #7 of app/views/user_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <%= f.label :login %><br />
+7:   <%= f.text_field :login %><br />
+8:   <br />
+9:   <%= f.label :password %><br />
+10:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:7
+    app/views/user_sessions/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (132.0ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:08:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 46ms (View: 10, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-28 22:25:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+
+ActionView::TemplateError (undefined method `passowrd_confirmation' for #<User:0xb6f21a50>) on line #12 of app/views/users/_form.erb:
+9: <br />
+10: 
+11: <%= form.label :password_confirmation %><br />
+12: <%= form.password_field :passowrd_confirmation %><br />
+
+    app/views/users/_form.erb:12
+    app/views/users/new.html.erb:5
+    app/views/users/new.html.erb:3
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (123.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-28 22:25:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 56ms (View: 17, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-04-28 22:25:43) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"tinroof46", "email"=>"boblmartens@gmail.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"IEPfgxE+kvkiarXJGDRvmGpRqKHPDu+pa8/Sljj2K3g=", "controller"=>"users"}
+
+NameError (undefined local variable or method `user' for #<UsersController:0xb6f8af28>):
+  app/controllers/users_controller.rb:10:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (172.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-04-28 22:26:33) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"tinroof46", "email"=>"boblmartens@gmail.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"IEPfgxE+kvkiarXJGDRvmGpRqKHPDu+pa8/Sljj2K3g=", "controller"=>"users"}
+  [4;36;1mUser Exists (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'boblmartens@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "crypted_password", "current_login_ip", "password_salt", "failed_login_count", "persistence_token", "login_count", "email", "last_login_ip", "created_at") VALUES(NULL, '2009-04-29 03:26:33', '2b9d5240bd11b5e6a1c97baaf1ba649466437ef9119df4a91d9be72e0cbe8e07241418e83e3d95b55b3ac5800c78a018dffe0ee9ac4b3fdc8461aa9bcb606628', '127.0.0.1', '0KcAR47qvFmk-LvmgEyX', 0, 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83', 1, 'boblmartens@gmail.com', NULL, '2009-04-29 03:26:33')[0m
+Redirected to http://localhost:3000/account
+Completed in 931ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:26:34) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 45ms (View: 6, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:26:38) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (6.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 165ms (View: 2, DB: 7) | 200 OK [http://localhost/account]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-28 22:26:45) [GET]
+
+ActionController::RoutingError (No route matches "/user_session/destroy" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#show (for 127.0.0.1 at 2009-04-28 22:26:50) [GET]
+  Parameters: {"action"=>"show", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:26:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 112ms (DB: 1) | 302 Found [http://localhost/user_session/new]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:26:52) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 53ms (View: 1, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-04-28 22:26:56) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/edit
+Rendered users/_form (1.2ms)
+Completed in 36ms (View: 8, DB: 1) | 200 OK [http://localhost/account/edit]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:27:05) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 59ms (View: 5, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:27:46) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 273ms (View: 16, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:28:59) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (9.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 68ms (View: 1, DB: 10) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-04-28 22:29:01) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/edit
+Rendered users/_form (1.2ms)
+Completed in 108ms (View: 3, DB: 1) | 200 OK [http://localhost/account/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-04-28 22:29:08) [PUT]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"", "email"=>"bob.martens@railsmagazine.com"}, "commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"IEPfgxE+kvkiarXJGDRvmGpRqKHPDu+pa8/Sljj2K3g=", "controller"=>"users"}
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+  [4;35;1mUser Exists (0.6ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'bob.martens@railsmagazine.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "email" = 'bob.martens@railsmagazine.com', "updated_at" = '2009-04-29 03:29:08' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Completed in 311ms (DB: 3) | 302 Found [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:29:09) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (2.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 52ms (View: 1, DB: 2) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-28 22:29:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 359ms (DB: 1) | 302 Found [http://localhost/user_session/new]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:29:19) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
+Rendering users/show
+Completed in 87ms (View: 1, DB: 1) | 200 OK [http://localhost/account]

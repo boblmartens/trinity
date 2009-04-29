@@ -1,0 +1,26 @@
+<p>
+  <b>Current ip:</b>
+  <%=h @user.current_login_ip %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Login count:</b>
+  <%=h @user.login_count %>
+</p>
+
+<p>
+  <b>Last login ip:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>Name</b>
+  <%=h @user.name %>
+</p>
+
+<%= link_to 'Edit', edit_account_path %>
