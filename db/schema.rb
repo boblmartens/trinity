@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090429021954) do
+ActiveRecord::Schema.define(:version => 20090430031735) do
 
   create_table "attached_files", :force => true do |t|
     t.string   "name"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20090429021954) do
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.string   "login_count"
+    t.integer  "login_count",        :limit => 255
     t.integer  "failed_login_count"
     t.string   "current_login_ip"
     t.string   "last_login_ip"

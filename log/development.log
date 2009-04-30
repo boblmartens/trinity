@@ -2124,3 +2124,585 @@ Processing UsersController#show (for 127.0.0.1 at 2009-04-28 22:29:19) [GET]
   [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ca310deaad19feea561fde842d9eb846c5b045e6e3f44d80ab0ac9a28caa599016ff8dd7adaea4dd1c2887c0e814116795ac1a1317453b073bb1ce952cbdcd83') LIMIT 1[0m
 Rendering users/show
 Completed in 87ms (View: 1, DB: 1) | 200 OK [http://localhost/account]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:12:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `new_session_path' for #<ActionView::Base:0xb6f54824>) on line #18 of app/views/layouts/application.html.erb:
+15:         <% if @current_user %>
+16:           Hey, <%= @current_user.name %> | <%= link_to "New Post", new_post_path %> | <%= link_to "Contributors", users_path %> | <%= link_to "Logout", session_path, :method => :delete %>
+17:         <% else %>
+18:           <%= link_to "Login", new_session_path %>, but only if you are a contributor.
+19:         <% end %>
+20:       </div>
+21: 
+
+    app/views/layouts/application.html.erb:18
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (86.5ms)
+Rendered rescues/_request_and_response (11.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:13:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 72ms (View: 29, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:14:40) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"tinroof46", "remember_me"=>"0", "email"=>"boblmartesn@gmail.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'boblmartesn@gmail.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 173ms (View: 45, DB: 1) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:14:57) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"tinroof46", "remember_me"=>"0", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'bob.martens@railsmagazine.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (112.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:16:44) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"tinroof46", "remember_me"=>"1", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'bob.martens@railsmagazine.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (85.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:22:32) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"tinroof46", "remember_me"=>"1", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'bob.martens@railsmagazine.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendered rescues/_trace (134.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:22:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+ERROR: compiling _run_erb_app47views47user_sessions47new46html46erb RAISED compile error
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:15: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:17: syntax error, unexpected kENSURE, expecting ')'
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:19: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47user_sessions47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Login</h1>\n"
+@output_buffer.concat " \n"
+ form_for @user_session, :url => user_session_path do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label :email ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.text_field :email ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.label :password ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.password_field :password ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( # f.check_box :remember_me ).to_s); @output_buffer.concat(( f.label :remember_me ).to_s); @output_buffer.concat "<br /> \n"
+@output_buffer.concat "  <br />\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.submit "Login" ).to_s); @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/bob/Development/trinity/app/views/user_sessions/new.html.erb:19:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/cgi_process.rb:44:in `dispatch_cgi'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:102:in `dispatch_cgi'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:28:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/rack/adapter/rails.rb:74:in `call'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:63:in `pre_process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:54:in `process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/connection.rb:39:in `receive_data'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run_machine'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.6/lib/eventmachine.rb:240:in `run'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/backends/base.rb:57:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/server.rb:150:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/controllers/controller.rb:80:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `send'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:173:in `run_command'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/lib/thin/runner.rb:139:in `run!'
+/usr/lib/ruby/gems/1.8/gems/thin-1.0.0/bin/thin:6
+/usr/bin/thin:19:in `load'
+/usr/bin/thin:19
+
+ActionView::TemplateError (compile error
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:15: syntax error, unexpected kEND, expecting ')'
+ end ; @output_buffer.concat "\n"
+    ^
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:17: syntax error, unexpected kENSURE, expecting ')'
+/home/bob/Development/trinity/app/views/user_sessions/new.html.erb:19: syntax error, unexpected kEND, expecting ')') on line #15 of app/views/user_sessions/new.html.erb:
+12:   <%= # f.check_box :remember_me %><%= f.label :remember_me %><br /> 
+13:   <br />
+14:   <%= f.submit "Login" %>
+15: <% end %>
+
+    app/views/user_sessions/new.html.erb:19:in `compile!'
+    thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+    thin (1.0.0) lib/thin/connection.rb:54:in `process'
+    thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+    eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+    thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+    thin (1.0.0) lib/thin/server.rb:150:in `start'
+    thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+    thin (1.0.0) lib/thin/runner.rb:173:in `send'
+    thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+    thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+    thin (1.0.0) bin/thin:6
+    /usr/bin/thin:19:in `load'
+    /usr/bin/thin:19
+
+Rendered rescues/_trace (112.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:23:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 161ms (View: 34, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:23:40) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"", "remember_me"=>"1", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 139ms (View: 24, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:23:47) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"app", "remember_me"=>"1", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'bob.martens@railsmagazine.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "failed_login_count" = 1, "updated_at" = '2009-04-30 02:23:47' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 505ms (View: 180, DB: 2) | 200 OK [http://localhost/user_session]
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:24:40) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"", "remember_me"=>"1", "email"=>"bob.martens@railsmagazine.com"}, "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 147ms (View: 21, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:27:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 120ms (View: 12, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-29 21:33:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.5ms)
+Completed in 94ms (View: 20, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-04-29 21:34:05) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"testy", "email"=>"test@test.com"}, "commit"=>"Register", "action"=>"create", "authenticity_token"=>"wAyri6D+H2/o1soAQ4j9+dqIZ8fDsDmSk2t0AlwlS4Y=", "controller"=>"users"}
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'test@test.com') LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '0fa7d310d421251f93c93bd37fc7b078fd559e12f00d044bbc17e3aa7dccc44d1829456f7134522eac7211b7d2da11bd7dd4a3160e95535efa807c402b04db1c') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "crypted_password", "current_login_ip", "password_salt", "failed_login_count", "persistence_token", "login_count", "email", "last_login_ip", "created_at") VALUES(NULL, '2009-04-30 02:34:06', '9fcb445b6739f26af22d4c2d27f422bb7db68efb938cef6003c1cc692979e7b706cebf0559e12523516acb622aaccb75257a63e9742eb4aa88f942212327185f', '127.0.0.1', 'yMyr1W00gUrG2HMy70Y6', 0, '0fa7d310d421251f93c93bd37fc7b078fd559e12f00d044bbc17e3aa7dccc44d1829456f7134522eac7211b7d2da11bd7dd4a3160e95535efa807c402b04db1c', 1, 'test@test.com', NULL, '2009-04-30 02:34:06')[0m
+Redirected to http://localhost:3000/account
+Completed in 904ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-29 21:34:06) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '0fa7d310d421251f93c93bd37fc7b078fd559e12f00d044bbc17e3aa7dccc44d1829456f7134522eac7211b7d2da11bd7dd4a3160e95535efa807c402b04db1c') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 54ms (View: 7, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-29 21:34:59) [GET]
+
+ActionController::RoutingError (No route matches "/user_session/destroy" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-29 21:35:09) [GET]
+
+ActionController::RoutingError (No route matches "/user_session/delete" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /usr/bin/thin:19:in `load'
+  /usr/bin/thin:19
+
+Rendering rescues/layout (not_found)
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-29 21:37:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 57ms (View: 19, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:37:35) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (6.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (98.2ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 21:42:24) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (165.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:05:00) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (105.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:06:43) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 181ms (View: 47, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:06:48) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 179ms (View: 27, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:07:10) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 411ms (View: 9, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:07:13) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"", "remember_me"=>"0", "email"=>""}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 104ms (View: 4, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:07:22) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"", "remember_me"=>"0", "email"=>""}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 124ms (View: 26, DB: 0) | 200 OK [http://localhost/user_session]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:07:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (9.1ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+
+TypeError (can't convert Fixnum into String):
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `+'
+  authlogic (2.0.11) lib/authlogic/session/magic_columns.rb:50:in `update_info'
+  authlogic (2.0.11) lib/authlogic/session/callbacks.rb:71:in `before_save'
+  authlogic (2.0.11) lib/authlogic/session/existence.rb:66:in `save'
+  app/controllers/user_sessions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (142.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+Migrating to CreateServiceTimes (20090421031301)
+Migrating to CreateAttachments (20090422024757)
+Migrating to AddServiceToAttachment (20090422025615)
+Migrating to RenameAttachmentTable (20090422031855)
+Migrating to CreateComments (20090423013832)
+Migrating to AddAttachedColumnsToAttachedFile (20090424015323)
+Migrating to CreateSeasons (20090424015933)
+Migrating to AddSeasonColumnToService (20090424020342)
+Migrating to CreateUsers (20090429021954)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("attached_files")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("churches")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("seasons")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("service_times")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("services")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+** acts_as_taggable_on: initialized properly.
+** acts_as_taggable_on: initialized properly.
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChurches (20090226061145)
+Migrating to CreateServices (20090228074926)
+Migrating to AddAttributesToService (20090421013704)
+Migrating to CreateServiceTimes (20090421031301)
+Migrating to CreateAttachments (20090422024757)
+Migrating to AddServiceToAttachment (20090422025615)
+Migrating to RenameAttachmentTable (20090422031855)
+Migrating to CreateComments (20090423013832)
+Migrating to AddAttachedColumnsToAttachedFile (20090424015323)
+Migrating to CreateSeasons (20090424015933)
+Migrating to AddSeasonColumnToService (20090424020342)
+Migrating to CreateUsers (20090429021954)
+Migrating to ChangeLoginCountToInteger (20090430031735)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" varchar(255), "failed_login_count" integer, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer(255), "failed_login_count" integer, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090430031735')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("attached_files")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("churches")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("seasons")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("service_times")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("services")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-29 22:18:37) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"ysU5Q9Tpdoiwk5qG68J2kCP1Aw8MTmAndXskeYqSm6c=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.8ms)[0m   [0mUPDATE "users" SET "login_count" = 2, "last_login_ip" = '127.0.0.1', "updated_at" = '2009-04-30 03:18:37' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/account
+Completed in 172ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-29 22:18:37) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 75ms (View: 8, DB: 1) | 200 OK [http://localhost/account]
