@@ -1,0 +1,20 @@
+<% form_for([@service, @attached_file]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :attached %><br />
+    <%= f.file_field :attached %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= submit_tag button_name %>
+  </p>
+<% end %>
