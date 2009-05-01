@@ -2,6 +2,7 @@
 *.log
 log/*
 log/*.log
+log/development.log
  
 # nothing in the tmp folder
 tmp/**/*
