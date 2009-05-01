@@ -1,0 +1,21 @@
+<h1>Seasons of the Church Year</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Color</th>
+  </tr>
+
+<% for season in @seasons %>
+  <tr>
+    <td><%=h season.name %></td>
+    <td><%=h season.color %></td>
+    <td><%= link_to 'Edit', edit_season_path(season) %></td>
+    <td><%= link_to 'Desroy', season, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Season', new_season_path %>

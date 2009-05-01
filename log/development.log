@@ -4040,3 +4040,437 @@ Rendering services/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
   [4;35;1mUser Load (8.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
 Completed in 172ms (View: 125, DB: 14) | 200 OK [http://localhost/services]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-30 20:28:12) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 63ms (View: 10, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-04-30 20:28:15) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.1ms)
+Completed in 256ms (View: 157, DB: 2) | 200 OK [http://localhost/account/edit]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-30 20:28:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"services"}
+  [4;36;1mService Load (1.7ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/application
+Rendering services/index
+  [4;35;1mSeason Load (5.6ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 130ms (View: 62, DB: 8) | 200 OK [http://localhost/services]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 20:34:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+
+NameError (uninitialized constant SeasonsController):
+  
+
+Rendered rescues/_trace (197.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-04-30 20:34:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"seasons"}
+
+NameError (uninitialized constant SeasonsController):
+  
+
+Rendered rescues/_trace (97.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+** acts_as_taggable_on: initialized properly.
+
+
+Processing SeasonsController#show (for 127.0.0.1 at 2009-04-30 20:56:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"seasons"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, edit, index, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:56:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;35;1mSeason Load (4.2ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/seasons/index.html.erb:
+6:     <th>Color</th>
+7:   </tr>
+8: 
+9: <% for service in @services %>
+10:   <tr>
+11:     <td><%=h season.name %></td>
+12:     <td><%=h season.color %></td>
+
+    app/views/seasons/index.html.erb:9
+    app/controllers/seasons_controller.rb:5:in `index'
+
+Rendered rescues/_trace (244.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:57:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;36;1mSeason Load (1.1ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+
+ActionView::TemplateError (undefined local variable or method `service' for #<ActionView::Base:0xb6fdddcc>) on line #14 of app/views/seasons/index.html.erb:
+11:     <td><%=h season.name %></td>
+12:     <td><%=h season.color %></td>
+13:     <td><%= link_to 'Edit', edit_season_path(season) %></td>
+14:     <td><%= link_to 'Desroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
+15:   </tr>
+16: <% end %>
+17: </table>
+
+    app/views/seasons/index.html.erb:14
+    app/views/seasons/index.html.erb:9:in `each'
+    app/views/seasons/index.html.erb:9
+    app/controllers/seasons_controller.rb:5:in `index'
+
+Rendered rescues/_trace (96.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:57:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;35;1mSeason Load (5.1ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 303ms (View: 254, DB: 6) | 200 OK [http://localhost/seasons/]
+
+
+Processing SeasonsController#edit (for 127.0.0.1 at 2009-04-30 20:57:38) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"seasons"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering seasons/edit
+Rendered seasons/_form (16.5ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 106ms (View: 84, DB: 1) | 200 OK [http://localhost/seasons/1/edit]
+
+
+Processing SeasonsController#update (for 127.0.0.1 at 2009-04-30 20:57:42) [PUT]
+  Parameters: {"commit"=>"Updating Season", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "id"=>"1", "controller"=>"seasons", "season"=>{"name"=>"Christmas", "color"=>"white"}}
+  [4;35;1mSeason Load (1.4ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Redirected to http://localhost:3000/seasons
+Completed in 76ms (DB: 1) | 302 Found [http://localhost/seasons/1]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:57:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;36;1mSeason Load (2.3ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 81ms (View: 48, DB: 3) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#new (for 127.0.0.1 at 2009-04-30 20:57:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"seasons"}
+Rendering template within layouts/application
+Rendering seasons/new
+Rendered seasons/_form (9.8ms)
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 198ms (View: 186, DB: 1) | 200 OK [http://localhost/seasons/new]
+
+
+Processing SeasonsController#create (for 127.0.0.1 at 2009-04-30 20:58:03) [POST]
+  Parameters: {"commit"=>"Create Season", "action"=>"create", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "controller"=>"seasons", "season"=>{"name"=>"Easter", "color"=>"gold"}}
+  [4;35;1mSeason Create (2.0ms)[0m   [0mINSERT INTO "seasons" ("name", "updated_at", "color", "created_at") VALUES('Easter', '2009-05-01 01:58:03', 'gold', '2009-05-01 01:58:03')[0m
+Redirected to http://localhost:3000/seasons
+Completed in 44ms (DB: 2) | 302 Found [http://localhost/seasons]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:58:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;36;1mSeason Load (1.3ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 72ms (View: 53, DB: 2) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#edit (for 127.0.0.1 at 2009-04-30 20:58:23) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"seasons"}
+  [4;36;1mSeason Load (1.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering seasons/edit
+Rendered seasons/_form (9.9ms)
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 138ms (View: 102, DB: 4) | 200 OK [http://localhost/seasons/2/edit]
+
+
+Processing SeasonsController#update (for 127.0.0.1 at 2009-04-30 20:58:25) [PUT]
+  Parameters: {"commit"=>"Update Season", "action"=>"update", "_method"=>"put", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "id"=>"2", "controller"=>"seasons", "season"=>{"name"=>"Easter", "color"=>"gold"}}
+  [4;36;1mSeason Load (1.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+Redirected to http://localhost:3000/seasons
+Completed in 42ms (DB: 1) | 302 Found [http://localhost/seasons/2]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:58:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;35;1mSeason Load (9.7ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 102ms (View: 68, DB: 11) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#new (for 127.0.0.1 at 2009-04-30 20:58:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"seasons"}
+Rendering template within layouts/application
+Rendering seasons/new
+Rendered seasons/_form (15.4ms)
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 127ms (View: 92, DB: 2) | 200 OK [http://localhost/seasons/new]
+
+
+Processing SeasonsController#create (for 127.0.0.1 at 2009-04-30 20:58:32) [POST]
+  Parameters: {"commit"=>"Create Season", "action"=>"create", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "controller"=>"seasons", "season"=>{"name"=>"Pentecost", "color"=>"red"}}
+  [4;36;1mSeason Create (0.7ms)[0m   [0;1mINSERT INTO "seasons" ("name", "updated_at", "color", "created_at") VALUES('Pentecost', '2009-05-01 01:58:32', 'red', '2009-05-01 01:58:32')[0m
+Redirected to http://localhost:3000/seasons
+Completed in 60ms (DB: 1) | 302 Found [http://localhost/seasons]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2009-04-30 20:58:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"seasons"}
+  [4;35;1mSeason Load (3.4ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/application
+Rendering seasons/index
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 88ms (View: 56, DB: 4) | 200 OK [http://localhost/seasons]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-30 20:58:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"services"}
+  [4;35;1mService Load (2.1ms)[0m   [0mSELECT * FROM "services" [0m
+Rendering template within layouts/application
+Rendering services/index
+  [4;36;1mSeason Load (0.5ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mUser Load (7.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 88ms (View: 62, DB: 10) | 200 OK [http://localhost/services]
+
+
+Processing ServicesController#edit (for 127.0.0.1 at 2009-04-30 20:58:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"4", "controller"=>"services"}
+  [4;36;1mService Load (1.2ms)[0m   [0;1mSELECT * FROM "services" WHERE ("services"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering services/edit
+  [4;35;1mSeason Load (2.0ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendered services/_form (67.5ms)
+  [4;36;1mUser Load (9.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 243ms (View: 190, DB: 13) | 200 OK [http://localhost/services/4/edit]
+
+
+Processing ServicesController#update (for 127.0.0.1 at 2009-04-30 20:58:55) [PUT]
+  Parameters: {"commit"=>"Update Service", "service"=>{"name"=>"Easter", "season_id"=>"2", "description"=>"Before the dawn is breaking, this day arises."}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "id"=>"4", "controller"=>"services"}
+  [4;35;1mService Load (1.6ms)[0m   [0mSELECT * FROM "services" WHERE ("services"."id" = 4) [0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mService Update (0.4ms)[0m   [0mUPDATE "services" SET "season_id" = 2, "updated_at" = '2009-05-01 01:58:55' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/services/4
+Completed in 341ms (DB: 4) | 302 Found [http://localhost/services/4]
+
+
+Processing ServicesController#show (for 127.0.0.1 at 2009-04-30 20:58:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"services"}
+  [4;36;1mService Load (0.6ms)[0m   [0;1mSELECT * FROM "services" WHERE ("services"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering services/show
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 233ms (View: 55, DB: 3) | 200 OK [http://localhost/services/4]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-30 20:58:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"services"}
+  [4;36;1mService Load (1.7ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/application
+Rendering services/index
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 81ms (View: 61, DB: 4) | 200 OK [http://localhost/services]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-04-30 20:59:03) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 157ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-30 20:59:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 45ms (View: 10, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-04-30 20:59:08) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"testy", "remember_me"=>"0", "email"=>"test@test.com"}, "action"=>"create", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".email) = 'test@test.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 4, "updated_at" = '2009-05-01 01:59:08' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/account
+Completed in 160ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-30 20:59:08) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 44ms (View: 2, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-04-30 20:59:11) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (1.3ms)
+Completed in 48ms (View: 10, DB: 1) | 200 OK [http://localhost/account/edit]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-30 20:59:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"services"}
+  [4;36;1mService Load (1.8ms)[0m   [0;1mSELECT * FROM "services" [0m
+Rendering template within layouts/application
+Rendering services/index
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 128ms (View: 66, DB: 4) | 200 OK [http://localhost/services]
+
+
+Processing ServicesController#edit (for 127.0.0.1 at 2009-04-30 20:59:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"services"}
+  [4;35;1mService Load (1.3ms)[0m   [0mSELECT * FROM "services" WHERE ("services"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering services/edit
+  [4;36;1mSeason Load (2.0ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendered services/_form (43.0ms)
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 135ms (View: 76, DB: 4) | 200 OK [http://localhost/services/2/edit]
+
+
+Processing ServicesController#update (for 127.0.0.1 at 2009-04-30 20:59:26) [PUT]
+  Parameters: {"commit"=>"Update Service", "service"=>{"name"=>"Christmas Day", "season_id"=>"1", "description"=>"Christmas Day celebration service."}, "action"=>"update", "_method"=>"put", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "id"=>"2", "controller"=>"services"}
+  [4;36;1mService Load (1.2ms)[0m   [0;1mSELECT * FROM "services" WHERE ("services"."id" = 2) [0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mService Update (0.4ms)[0m   [0;1mUPDATE "services" SET "updated_at" = '2009-05-01 01:59:26', "user_id" = 2 WHERE "id" = 2[0m
+Redirected to http://localhost:3000/services/2
+Completed in 388ms (DB: 3) | 302 Found [http://localhost/services/2]
+
+
+Processing ServicesController#show (for 127.0.0.1 at 2009-04-30 20:59:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"services"}
+  [4;35;1mService Load (0.6ms)[0m   [0mSELECT * FROM "services" WHERE ("services"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering services/show
+  [4;36;1mSeason Load (0.5ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 85ms (View: 57, DB: 4) | 200 OK [http://localhost/services/2]
+
+
+Processing ServicesController#index (for 127.0.0.1 at 2009-04-30 20:59:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"services"}
+  [4;35;1mService Load (1.8ms)[0m   [0mSELECT * FROM "services" [0m
+Rendering template within layouts/application
+Rendering services/index
+  [4;36;1mSeason Load (0.5ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+  [4;36;1mSeason Load (6.3ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Completed in 248ms (View: 59, DB: 10) | 200 OK [http://localhost/services]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-30 21:00:19) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (3.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 120ms (View: 9, DB: 3) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-30 21:00:23) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 45ms (View: 2, DB: 1) | 200 OK [http://localhost/account]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-30 21:02:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (7.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 37ms (DB: 7) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-04-30 21:02:46) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 63ms (View: 22, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2009-04-30 21:02:50) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"jv3DVqYw9r/K7BPfDkGkWIOHe2xpodP5iD9LwpEIEzg=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 126ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-30 21:02:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 45ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-04-30 21:03:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 230ms (View: 147, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-30 21:07:14) [GET]
+
+ActionController::RoutingError (No route matches "/attachments" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
