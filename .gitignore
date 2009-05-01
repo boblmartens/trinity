@@ -3,6 +3,9 @@
 log/*
 log/*.log
 log/development.log
+log/production.log
+log/test.log
+log/server.log
  
 # nothing in the tmp folder
 tmp/**/*
