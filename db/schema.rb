@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090430031735) do
+ActiveRecord::Schema.define(:version => 20090501005323) do
 
   create_table "attached_files", :force => true do |t|
     t.string   "name"
@@ -65,9 +65,8 @@ ActiveRecord::Schema.define(:version => 20090430031735) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.text     "season"
-    t.text     "other"
     t.integer  "season_id"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

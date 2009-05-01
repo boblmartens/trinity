@@ -3,13 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Church</th>
+    <th>Season</th>
   </tr>
 
 <% for service in @services %>
   <tr>
     <td><%=h service.name %></td>
-    <td><%=h service.church_id %></td>
+    <td><%=h service.season.name %></td>
     <td><%= link_to 'Show', service %></td>
     <td><%= link_to 'Edit', edit_service_path(service) %></td>
     <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>

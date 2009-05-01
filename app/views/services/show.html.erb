@@ -4,8 +4,18 @@
 </p>
 
 <p>
-  <b>Church:</b>
-  <%=h @service.church_id %>
+  <b>Season of Church Year:</b>
+  <%=h @service.season.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @service.description %>
+</p>
+
+<p>
+  <b>Last updated by:</b>
+  <%=h @service.user.name %>
 </p>
 
 

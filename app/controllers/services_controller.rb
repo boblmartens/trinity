@@ -41,6 +41,7 @@ class ServicesController < ApplicationController
   # POST /services.xml
   def create
     @service = Service.new(params[:service])
+    @service.user_id = current_user.id
 
     respond_to do |format|
       if @service.save
@@ -58,6 +59,7 @@ class ServicesController < ApplicationController
   # PUT /services/1.xml
   def update
     @service = Service.find(params[:id])
+    @service.user_id = current_user.id
 
     respond_to do |format|
       if @service.update_attributes(params[:service])

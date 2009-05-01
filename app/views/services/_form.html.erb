@@ -1,0 +1,23 @@
+<% form_for(@service) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :season_id %><br />
+    <%= select("service", "season_id", Season.all.collect {|s| [s.name, s.id] }, { :prompt => 'Select Season of Church Year' } ) %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= submit_tag button_name %>
+  </p>
+<% end %>
+
