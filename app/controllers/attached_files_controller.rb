@@ -1,6 +1,8 @@
 class AttachedFilesController < ApplicationController
+  before_filter :load_service, :only => [ :index, :new, :create ]
+
   def index
-    @attached_files = AttachedFile.find(:all)
+    @attached_files = @service.attached_files.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,12 +33,12 @@ class AttachedFilesController < ApplicationController
   end
 
   def create
-    @attached_file = AttachedFile.new(params[:atttached_file])
+    @attached_file = @service.attached_files.build(params[:attached_file])
     
     respond_to do |format|
       if @attached_file.save 
         flash[:notice] = 'Attachment was successfully created.'
-        format.html { redirect_to(@attached_file) }
+        format.html { redirect_to([@service, @attached_file]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "new" }
@@ -69,4 +71,9 @@ class AttachedFilesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+    def load_service
+      @service = Service.find(params[:service_id])
+    end
 end

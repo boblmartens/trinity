@@ -1,0 +1,6 @@
+<h1><%=h @attached_file.name %></h1>
+<p><%=h @attached_file.attached_file_name %> <em>(<%=h @attached_file.attached_content_type %>)</em></p>
+
+<p><%=h @attached_file.description %></p>
+
+<%= link_to 'Click to download.', @attached_file.attached.url %>
