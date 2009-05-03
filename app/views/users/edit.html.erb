@@ -1,5 +1,7 @@
 <h1>Edit My Account</h1>
 
+<p>Only change the fields you want to update.</p>
+
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>

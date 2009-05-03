@@ -11,13 +11,16 @@
 	<body>
 
     <div id="header">
-      <h1>Welcome to Trinity</h1>
-      <h2>The online worship coordination application.</h2>
-
       <% if !current_user %>
+        <h1><%= link_to 'Welcome to Trinity', root_path %></h1>
+        <h2>The online worship coordination application.</h2>
+
         <%= link_to "Register", new_account_path %> | 
         <%= link_to "Log In", new_user_session_path %>
       <% else %>
+        <h1><%= link_to 'Welcome to Trinity', services_path %></h1>
+        <h2>The online worship coordination application.</h2>
+
         <%= link_to "My Account", account_path %> | 
         <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
       <% end %>
