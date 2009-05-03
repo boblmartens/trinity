@@ -9,17 +9,27 @@
 	</head>
 
 	<body>
-    <h1>Trinity</h1>
 
-    <% if !current_user %>
-      <%= link_to "Register", new_account_path %>
-      <%= link_to "Log In", new_user_session_path %>
-    <% else %>
-      <%= link_to "My Account", account_path %>
-      <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-    <% end %>
+    <div id="header">
+      <h1>Welcome to Trinity</h1>
+      <h2>The online worship coordination application.</h2>
 
+      <% if !current_user %>
+        <%= link_to "Register", new_account_path %> | 
+        <%= link_to "Log In", new_user_session_path %>
+      <% else %>
+        <%= link_to "My Account", account_path %> | 
+        <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+      <% end %>
+    </div>
+
+    <div id="content">
 			<%= yield %>
+    </div>
+
+    <div id="footer">
+      <p>&copy; <a href="mailto:boblmartens@gmail.com">Bob Martens</a> 2009</p>
+    </div>
 	</body>
 
 </html>
