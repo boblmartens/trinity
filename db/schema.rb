@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090501005323) do
+ActiveRecord::Schema.define(:version => 20090504010945) do
 
   create_table "attached_files", :force => true do |t|
     t.string   "name"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20090501005323) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title"
     t.text     "body"
     t.integer  "user_id"
     t.string   "commentable_type"

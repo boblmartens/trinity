@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
-  # GET /services
-  # GET /services.xml
+  before_filter :require_user
+
   def index
     @services = Service.find(:all)
 
@@ -10,8 +10,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  # GET /services/1
-  # GET /services/1.xml
   def show
     @service = Service.find(params[:id])
 
@@ -21,8 +19,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  # GET /services/new
-  # GET /services/new.xml
   def new
     @service = Service.new
 
@@ -32,13 +28,10 @@ class ServicesController < ApplicationController
     end
   end
 
-  # GET /services/1/edit
   def edit
     @service = Service.find(params[:id])
   end
 
-  # POST /services
-  # POST /services.xml
   def create
     @service = Service.new(params[:service])
     @service.user_id = current_user.id
@@ -55,8 +48,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  # PUT /services/1
-  # PUT /services/1.xml
   def update
     @service = Service.find(params[:id])
     @service.user_id = current_user.id
@@ -73,8 +64,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  # DELETE /services/1
-  # DELETE /services/1.xml
   def destroy
     @service = Service.find(params[:id])
     @service.destroy

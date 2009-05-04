@@ -1,4 +1,6 @@
 class SeasonsController < ApplicationController
+  before_filter :require_user
+
   def index
     @seasons = Season.find(:all)
 

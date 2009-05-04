@@ -1,0 +1,22 @@
+<h1><%=h @commentable.name %> Discussion</h1>
+<p><%=h @commentable.description %></p>
+
+<ul id="comment_list">
+  <% @comments.each do |comment| %>
+    <li>
+      <p class="comment_header"><%= link_to comment.user.name, user_path(comment.user.id) %> commented at <%= comment.created_at %></p>
+      <p class="comment_body"><%= comment.body %></p>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Post New Comment</h2>
+<% form_for [@commentable, Comment.new] do |form| %>
+  <ol class="formList">
+    <li>
+      <%= form.label :body, "<strong>Body:</strong> Feel free to use Markdown on comments." %><br />
+      <%= form.text_area :body, :rows => 5 %>
+    </li>
+    <li><%= submit_tag "Add Comment" %></li>
+  </ol>
+<% end %>
