@@ -28,6 +28,7 @@
     Submitted by <%= link_to attach.user.name, user_path(attach.user.id) %> at <%= attach.created_at %>
   </li>
 <% end %>
+  <li><%= link_to "[Add Attachment]", new_service_attached_file_path(@service.id) %></li>
 </ul>
 
 

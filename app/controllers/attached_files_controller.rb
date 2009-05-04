@@ -1,14 +1,6 @@
 class AttachedFilesController < ApplicationController
-  before_filter :load_service, :only => [ :index, :new, :create ]
-
-  def index
-    @attached_files = @service.attached_files.find(:all)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @attached_files }
-    end
-  end
+  before_filter :load_service, :only => [ :new, :create ]
+  before_filter :require_user
 
   def show
     @attached_file = AttachedFile.find(params[:id])
