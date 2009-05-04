@@ -15,6 +15,27 @@
   <%=h @service.description %>
 </p>
 
+<ul id="service_times_list">
+<% @service_times.each do |service_time| %>
+  <li><%= service_time.service_time %> on <%= service_time.service_date %> - <%= link_to 'Delete', [@service, service_time], :confirm => 'Do you want to delete this service time?', :method => 'delete' %>
+<% end %>
+</ul>
+
+
+<% form_for([@service, @service_time = ServiceTime.new]) do |f| %>
+  <p>
+    <%= f.label :service_date, "Choose service date:" %>
+    <%= f.date_select :service_date %>
+  </p>
+
+  <p>
+    <%= f.label :service_time, "Choose service time:" %>
+    <%= f.time_select :service_time %>
+  </p>
+
+  <p><%= submit_tag "Add Service Time" %></p>
+<% end %>
+
 <p>
   <b>Last updated by:</b>
   <%=h @service.user.name %>
