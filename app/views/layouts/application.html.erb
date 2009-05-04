@@ -21,7 +21,7 @@
         <h1><%= link_to 'Welcome to Trinity', services_path %></h1>
         <h2>The online worship coordination application.</h2>
 
-        <%= link_to "My Account", account_path %> | 
+        Welcome back <%= link_to current_user.name, account_path %> | 
         <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
       <% end %>
     </div>

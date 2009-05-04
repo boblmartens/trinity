@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @attachments = @service.attached_files
 
     respond_to do |format|
       format.html # show.html.erb

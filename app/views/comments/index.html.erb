@@ -1,4 +1,11 @@
-<h1><%=h @commentable.name %> Discussion</h1>
+<h1>
+  <% if @commentable.class.to_s == "Service" %>
+    <%= link_to @commentable.name, service_path(@commentable.id) %> Discussion
+  <% else%>
+    <%= link_to @commentable.name, attached_file_path(@commentable.id) %> Discussion
+  <% end %>
+</h1>
+
 <p><%=h @commentable.description %></p>
 
 <ul id="comment_list">

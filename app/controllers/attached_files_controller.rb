@@ -34,6 +34,7 @@ class AttachedFilesController < ApplicationController
 
   def create
     @attached_file = @service.attached_files.build(params[:attached_file])
+    @attached_file.user_id = current_user.id
     
     respond_to do |format|
       if @attached_file.save 

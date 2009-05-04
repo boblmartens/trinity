@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
 
   has_many :services
   has_many :comments
+  has_many :attached_files
 end

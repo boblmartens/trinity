@@ -8,6 +8,8 @@
   <%=h @service.season.name %>
 </p>
 
+<p><%= link_to "Join the discussion!", service_comments_path(@service.id) %> Currently, there are <%= @service.comments.size %> comments.</p>
+
 <p>
   <b>Description:</b>
   <%=h @service.description %>
@@ -17,6 +19,16 @@
   <b>Last updated by:</b>
   <%=h @service.user.name %>
 </p>
+
+<p><b>Attachments:</b></p>
+<ul id="attachment_list">
+<% @attachments.each do |attach| %>
+  <li>
+    <%= link_to attach.name, attached_file_path(attach.id) %> - <%= link_to "[Download]", attach.attached.url %><br />
+    Submitted by <%= link_to attach.user.name, user_path(attach.user.id) %> at <%= attach.created_at %>
+  </li>
+<% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
