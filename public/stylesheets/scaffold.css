@@ -1,3 +1,46 @@
+/* header styling */
+
+#header {
+  width: 900px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#header h1 {
+  text-align: center;
+  font-size: xx-large;
+  text-transform: uppercase;
+}
+
+#header h2 {
+  text-align: center;
+  font-size: large;
+}
+
+/* content styling */
+
+#content {
+  width: 900px;
+  margin: 0 auto;
+}
+
+#content h1 {
+  text-align: center;
+  font-size: x-large;
+  font-weight: normal;
+  padding: 10px 0 0;
+}
+
+/* footer styling */
+
+#footer {
+  width: 900px;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+
+/* Rails defalts */
+
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {

@@ -1,5 +1,6 @@
-<h1>Login</h1>
- 
+<h1>Please Login</h1>
+
+<div id="login">
 <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
 
@@ -13,3 +14,4 @@
   <br />
   <%= f.submit "Login" %>
 <% end %>
+</div>

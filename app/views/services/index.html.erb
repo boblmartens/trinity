@@ -1,22 +1,13 @@
 <h1>Listing services</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Season</th>
-  </tr>
+<%= link_to 'Create New Service', new_service_path %>
 
 <% for service in @services %>
-  <tr>
-    <td><%=h service.name %></td>
-    <td><%=h service.season.name %></td>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<ul class="service_instance">
+  <li><h3><%= link_to service.name, service_path(service) %></h3></li>
+  <li><%=h service.season.name %></li>
+  <li><%=h service.attached_files.size %> attachments</li>
+  <li><%=h service.comments.size %> <%= link_to 'comments', service_comments_path(service) %> </li>
+  <li><%= link_to 'Edit', edit_service_path(service) %> | <%= link_to 'Destroy', service, :confirm => 'Are you sure you want to destroy this service?', :method => :delete %></li>
+</ul>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New service', new_service_path %>
