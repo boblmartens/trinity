@@ -47,6 +47,7 @@ blockquote {
   font-weight: normal;
   padding: 0;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* footer styling */
@@ -77,6 +78,17 @@ blockquote {
 }
 
 /* Service Stylig */
+
+h4 {
+  text-align: center;
+  font-size: large;
+}
+
+#discussion_link {
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
 
 #create_service {
   font-weight: bold;

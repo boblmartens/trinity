@@ -3,6 +3,6 @@
 
 <p><%=h @attached_file.attached_file_name %> <em>(<%=h @attached_file.attached_content_type %>)</em> - <%= link_to "[Download]", @attached_file.attached.url %></p>
 
-<p><%= link_to "Join the disucssion!", attached_file_comments_path(@attached_file.id) %> Currently there are <%= @attached_file.comments.size %> comments.</p>
+<p><%= link_to "Join the discussion!", attached_file_comments_path(@attached_file.id) %> Currently there are <%= @attached_file.comments.size %> comments.</p>
 
 <p><%=h @attached_file.description %></p>

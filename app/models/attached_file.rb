@@ -6,4 +6,8 @@ class AttachedFile < ActiveRecord::Base
   validates_presence_of :name, :description, :user_id
   
   has_attached_file :attached
+
+  def pretty_date
+    created_at.strftime("%m.%d.%y")
+  end
 end

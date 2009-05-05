@@ -1,11 +1,7 @@
 <h1 style="color:#<%=h @service.season.color %>"><%=h @service.name %></h1>
+<h4>The Season of  <%=h @service.season.name %></h4>
 
-<p>
-  <b>Season of Church Year:</b>
-  <%=h @service.season.name %>
-</p>
-
-<p><%= link_to "Join the discussion!", service_comments_path(@service.id) %> Currently, there are <%= @service.comments.size %> comments.</p>
+<p id="discussion_link"><%= link_to "Join the discussion!", service_comments_path(@service.id) %> Currently, there are <%= @service.comments.size %> comments.</p>
 
 <p>
   <b>Description:</b>
@@ -16,7 +12,7 @@
 
 <ul id="service_times_list">
 <% @service_times.each do |service_time| %>
-  <li><%= service_time.service_time %> on <%= service_time.service_date %> - <%= link_to 'Delete', [@service, service_time], :confirm => 'Do you want to delete this service time?', :method => 'delete' %>
+  <li><%= service_time.pretty_time %> on <%= service_time.pretty_date %> - <%= link_to 'Delete', [@service, service_time], :confirm => 'Do you want to delete this service time?', :method => 'delete' %>
 <% end %>
 </ul>
 
@@ -48,7 +44,7 @@
 <% @attachments.each do |attach| %>
   <li>
     <%= link_to attach.name, attached_file_path(attach.id) %> - <%= link_to "[Download]", attach.attached.url %><br />
-    Submitted by <%= link_to attach.user.name, user_path(attach.user.id) %> at <%= attach.created_at %>
+    Submitted by <%= link_to attach.user.name, user_path(attach.user.id) %> on <%= attach.pretty_date %>
   </li>
 <% end %>
   <li><%= link_to "[Add Attachment]", new_service_attached_file_path(@service.id) %></li>
