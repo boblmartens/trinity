@@ -157,8 +157,8 @@ h4 {
 }
 
 .comment_body {
-  line-height: 0;
-  padding: 10px;
+  line-height: 1;
+  padding: 0 10px;
 }
 
 .formList {
