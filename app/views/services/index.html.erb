@@ -1,9 +1,9 @@
-<h1>Listing services</h1>
+<h1>Master Service List</h1>
 
-<%= link_to 'Create New Service', new_service_path %>
+<p id="create_service"><%= link_to 'Create New Service', new_service_path %></p>
 
 <% for service in @services %>
-<ul class="service_instance">
+<ul class="service_instance" style="border-color: #<%=h service.season.color %>">
   <li><h3><%= link_to service.name, service_path(service) %></h3></li>
   <li><%=h service.season.name %></li>
   <li><%=h service.attached_files.size %> attachments</li>

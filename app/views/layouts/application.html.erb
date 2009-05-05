@@ -12,26 +12,32 @@
 
     <div id="header">
       <% if !current_user %>
-        <h1><%= link_to 'Welcome to Trinity', root_path %></h1>
-        <h2>The online worship coordination application.</h2>
-
-        <%= link_to "Register", new_account_path %> | 
-        <%= link_to "Log In", new_user_session_path %>
+        <p>
+          <%= link_to "Register", new_account_path %> | 
+          <%= link_to "Log In", new_user_session_path %>
+        </p>
       <% else %>
-        <h1><%= link_to 'Welcome to Trinity', services_path %></h1>
-        <h2>The online worship coordination application.</h2>
-
-        Welcome back <%= link_to current_user.name, account_path %> | 
-        <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+        <p>
+          Welcome back <%=h current_user.name %> | 
+          <%= link_to 'My Account', account_path %> | 
+          <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+        </p>
       <% end %>
     </div>
 
     <div id="content">
-			<%= yield %>
+      <h1 id="site_title"><%= link_to "Bob's Church of Demoing", services_path %></h1>
+
+			<div id="yield">
+        <%= yield %>
+      </div>
     </div>
 
     <div id="footer">
-      <p>&copy; <a href="mailto:boblmartens@gmail.com">Bob Martens</a> 2009</p>
+      <p>
+        This site uses <%= link_to "Trinity 0.1.0", "http://trinity.bobmartens.net" %> | 
+        &copy; <a href="mailto:boblmartens@gmail.com">Bob Martens</a> 2009
+      </p>
     </div>
 	</body>
 
