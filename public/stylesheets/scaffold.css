@@ -19,7 +19,13 @@
   font-size: xx-large;
   font-weight: normal;
   text-align: center;
-  padding: 0 0 0 10px;
+  padding: 0;
+}
+
+blockquote {
+  text-align: center;
+  line-height: 0;
+  margin: 5px 0 0;
 }
 
 /* content styling */
@@ -39,7 +45,7 @@
   text-align: center;
   font-size: x-large;
   font-weight: normal;
-  padding: 10px 0 0;
+  padding: 0;
   font-weight: bold;
 }
 
@@ -93,6 +99,60 @@
   line-height: 0;
   padding: 15px 0 0;
   margin: 0 0 10px;
+}
+
+#service_times_list {
+  list-style: none;
+  padding: 0;
+  margin: -10px 0 15px;
+}
+
+#service_times_list li {
+  margin: 0 0 5px;
+  background: #cfcfcf;
+  width: 375px;
+  padding: 2px 0 2px 3px;
+}
+
+#attachment_list {
+  list-style: none;
+  padding: 0;
+  margin: -10px 0 15px;
+}
+
+#attachment_list li {
+  margin: 0 0 10px;
+
+}
+
+/* Comments Styling */
+
+#comment_list {
+  list-style: none;
+  padding: 2px 10px;
+}
+
+#comment_list li {
+  background: #ffcccc;
+  padding: 5px 0; 
+  margin: 0 0 10px 0;
+}
+
+.comment_header {
+  line-height: 0;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.comment_body {
+  line-height: 0;
+  padding: 10px;
+}
+
+.formList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Rails defalts */
